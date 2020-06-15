@@ -37,7 +37,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Entidades\" />
     <Folder Include="DAL\" />
     <Folder Include="BLL\" />
     <Folder Include="UI\Consultas\" />
