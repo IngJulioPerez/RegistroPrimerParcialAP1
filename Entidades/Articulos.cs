@@ -9,7 +9,7 @@ namespace RegistroPrimerParcialAP1.Entidades
     {
         [Key]
 
-        public int ProductoID { get; set; }
+        public int ArticuloId { get; set; }
         public string Descripcion { get; set; }
         public int Existencia { get; set; }
         public float Costo { get; set; }

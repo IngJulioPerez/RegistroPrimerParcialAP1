@@ -14,7 +14,7 @@ namespace RegistroPrimerParcialAP1.BLL
     {
         public static bool Guardar(Articulos articulo)
         {
-            if (!Existe(articulo.ProductoID))
+            if (!Existe(articulo.ArticuloId))
                 return Insertar(articulo);
             else
                 return Modificar(articulo);
@@ -119,7 +119,7 @@ namespace RegistroPrimerParcialAP1.BLL
 
             try
             {
-                encontrado = contexto.Articulos.Any(e => e.ProductoID == id);
+                encontrado = contexto.Articulos.Any(e => e.ArticuloId == id);
             }
             catch
             {

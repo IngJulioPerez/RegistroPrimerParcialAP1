@@ -38,7 +38,6 @@
 
   <ItemGroup>
     <Folder Include="UI\Consultas\" />
-    <Folder Include="UI\Registros\" />
   </ItemGroup>
 
   <ItemGroup>
