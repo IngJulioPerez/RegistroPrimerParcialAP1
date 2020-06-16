@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using RegistroPrimerParcialAP1.Entidades;
+using RegistroPrimerParcialAP1.BLL;
 
 namespace RegistroPrimerParcialAP1.UI.Registros
 {
@@ -17,9 +19,75 @@ namespace RegistroPrimerParcialAP1.UI.Registros
     /// </summary>
     public partial class rArticulos : Window
     {
+        private Articulos Articulo = new Articulos();
         public rArticulos()
         {
             InitializeComponent();
+            this.DataContext = Articulo;
+
+        }
+
+        private bool Validar()
+        {
+            bool esValido = true;
+            if (DescripcionTextBox.Text.Length == 0)
+            {
+                esValido = false;
+                MessageBox.Show("Debe introducir una descripción", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+            return esValido;
+        }
+
+        private void Limpiar()
+        {
+            this.Articulo = new Articulos();
+            this.DataContext = Articulo;
+
+        }
+
+        private void BuscarButton_Click(object sender, RoutedEventArgs e)
+        {
+            var articulo = ArticulosBLL.Buscar(Utilidades.ToInt(ArticuloIdTextBox.Text));
+
+            if (articulo != null)
+                this.Articulo = articulo;
+            else
+                this.Articulo = new Articulos();
+
+            this.DataContext = this.Articulo;
+        }
+
+        private void NuevoButton_Click(object sender, RoutedEventArgs e)
+        {
+            Limpiar();
+        }
+
+        private void GuardarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (!Validar())            
+                return;
+
+                var paso = ArticulosBLL.Guardar(Articulo);
+                if (paso)
+                {
+                    Limpiar();
+                    MessageBox.Show("Transacción Exitosa", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                else
+                    MessageBox.Show("transaccion Fallida", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+            
+        }
+
+        private void EliminarButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (ArticulosBLL.Eliminar(Utilidades.ToInt(ArticuloIdTextBox.Text)))
+            {
+                Limpiar();
+                MessageBox.Show("Articulo Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
+            }
+            else
+                MessageBox.Show("No se pudoo eliminar", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
         }
     }
+
 }
