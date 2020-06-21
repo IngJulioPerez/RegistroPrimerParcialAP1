@@ -16,7 +16,10 @@ namespace RegistroPrimerParcialAP1.Entidades
         public float ValorInventario { get; set; }
 
 
-       
+       public Articulos()
+        {
+            ValorInventario = Costo * Existencia;
+        }
         
     }    
 

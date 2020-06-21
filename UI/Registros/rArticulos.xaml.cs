@@ -86,9 +86,25 @@ namespace RegistroPrimerParcialAP1.UI.Registros
                 MessageBox.Show("Articulo Eliminado", "Exito", MessageBoxButton.OK, MessageBoxImage.Information);
             }
             else
-                MessageBox.Show("No se pudoo eliminar", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
+                MessageBox.Show("No se pudo eliminar", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
         }
 
+        private void ValorInventarioTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {            
+            
+            ValorInventarioTextBox.Text = (Utilidades.ToInt(ExistenciaTextBox.Text)* Utilidades.ToInt(CostoTextBox.Text)).ToString(); 
+ 
+        }
+
+        private void ExistenciaTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            int existencia = int.Parse(ExistenciaTextBox.Text);
+        }
+
+        private void CostoTextBox_TextChanged(object sender, TextChangedEventArgs e)
+        {
+            double costo = Convert.ToDouble(CostoTextBox.Text);
+        }
     }
 
 }

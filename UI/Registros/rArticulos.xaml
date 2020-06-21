@@ -5,7 +5,8 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RegistroPrimerParcialAP1.UI.Registros"
         mc:Ignorable="d"
-        Title="Registro Articulos" Height="350" Width="380">
+        Title="Registro Articulos" Height="370
+        " Width="380">
     <Grid>
 
         <!--StakPanel Principal-->
@@ -37,21 +38,21 @@
             <!--Existencia-->
             <StackPanel Orientation="Horizontal" Height="40" Margin="10">
                 <Label Content="Existencia" Margin="0,6,15,0" />
-                <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" Width="100" Height="20" Margin="20,0,15,0"/>
+                <TextBox x:Name="ExistenciaTextBox" Text="{Binding Existencia}" Width="100" Height="20" Margin="20,0,15,0" TextChanged="ExistenciaTextBox_TextChanged"/>
 
             </StackPanel>
 
             <!--Costo-->
             <StackPanel Orientation="Horizontal" Height="40" Margin="10">
                 <Label Content="Costo" Margin="0,6,15,0" />
-                <TextBox x:Name="CostoTextBox" Text="{Binding Costo}" Width="100" Height="20" Margin="40,0,15,0"/>
+                <TextBox x:Name="CostoTextBox" Text="{Binding Costo}" Width="100" Height="20" Margin="40,0,15,0" TextChanged="CostoTextBox_TextChanged"/>
 
             </StackPanel>
 
-            <!--Costo-->
+            <!--Valor Inventario-->
             <StackPanel Orientation="Horizontal" Height="40" Margin="10">
                 <Label Content="Valor Inventario" Margin="0,6,15,0" />
-                <TextBox x:Name="ValorInventarioTextBox" IsReadOnly="True" Text="{Binding ValorInventario}" Width="100" Height="20" Margin="-13,0,15,0"/>
+                <TextBox x:Name="ValorInventarioTextBox" IsReadOnly="True" Text="{Binding ValorInventario}" Width="100" Height="20" Margin="-13,0,15,0" TextChanged="ValorInventarioTextBox_TextChanged"/>
             </StackPanel>
 
 

@@ -130,8 +130,7 @@ namespace RegistroPrimerParcialAP1.BLL
                 contexto.Dispose();
             }
             return encontrado;
-        }
-              
+        }              
         
     }
 }
