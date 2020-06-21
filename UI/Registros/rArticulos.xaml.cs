@@ -88,6 +88,7 @@ namespace RegistroPrimerParcialAP1.UI.Registros
             else
                 MessageBox.Show("No se pudoo eliminar", "Fallo", MessageBoxButton.OK, MessageBoxImage.Error);
         }
+
     }
 
 }

@@ -28,7 +28,7 @@
             </StackPanel>
 
             <!--Descripcion-->
-            <StackPanel Orientation="Horizontal" Height="40" Margin="10">
+            <StackPanel Orientation="Horizontal" Height="40" Margin="10" >
                 <Label Content="Descripcion" Margin="0,6,15,0" />
                 <TextBox x:Name="DescripcionTextBox" Text="{Binding Descripcion}" Width="180" Height="20" Margin="9,0,15,0"/>
 

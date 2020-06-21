@@ -52,7 +52,7 @@ namespace RegistroPrimerParcialAP1.BLL
                 contexto.Entry(articulo).State = EntityState.Modified;
                 paso = contexto.SaveChanges() > 0;
             }
-            catch
+            catch(Exception)
             {
                 throw;
             }
@@ -79,7 +79,7 @@ namespace RegistroPrimerParcialAP1.BLL
                     paso = contexto.SaveChanges() > 0;
                 }
             }
-            catch
+            catch(Exception)
             {
                 throw;
             }
@@ -101,7 +101,7 @@ namespace RegistroPrimerParcialAP1.BLL
                 
                 contexto.Articulos.Find(id);
             }
-            catch
+            catch(Exception)
             {
                 throw;
             }
@@ -121,7 +121,7 @@ namespace RegistroPrimerParcialAP1.BLL
             {
                 encontrado = contexto.Articulos.Any(e => e.ArticuloId == id);
             }
-            catch
+            catch(Exception)
             {
                 throw;
             }

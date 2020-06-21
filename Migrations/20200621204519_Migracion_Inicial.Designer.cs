@@ -8,7 +8,7 @@ using RegistroPrimerParcialAP1.DAL;
 namespace RegistroPrimerParcialAP1.Migrations
 {
     [DbContext(typeof(Contexto))]
-    [Migration("20200615224400_Migracion_Inicial")]
+    [Migration("20200621204519_Migracion_Inicial")]
     partial class Migracion_Inicial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -19,7 +19,7 @@ namespace RegistroPrimerParcialAP1.Migrations
 
             modelBuilder.Entity("RegistroPrimerParcialAP1.Entidades.Articulos", b =>
                 {
-                    b.Property<int>("ProductoID")
+                    b.Property<int>("ArticuloId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -35,7 +35,7 @@ namespace RegistroPrimerParcialAP1.Migrations
                     b.Property<float>("ValorInventario")
                         .HasColumnType("REAL");
 
-                    b.HasKey("ProductoID");
+                    b.HasKey("ArticuloId");
 
                     b.ToTable("Articulos");
                 });

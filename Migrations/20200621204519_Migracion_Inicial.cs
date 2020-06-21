@@ -10,7 +10,7 @@ namespace RegistroPrimerParcialAP1.Migrations
                 name: "Articulos",
                 columns: table => new
                 {
-                    ProductoID = table.Column<int>(nullable: false)
+                    ArticuloId = table.Column<int>(nullable: false)
                         .Annotation("Sqlite:Autoincrement", true),
                     Descripcion = table.Column<string>(nullable: true),
                     Existencia = table.Column<int>(nullable: false),
@@ -19,7 +19,7 @@ namespace RegistroPrimerParcialAP1.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Articulos", x => x.ProductoID);
+                    table.PrimaryKey("PK_Articulos", x => x.ArticuloId);
                 });
         }
 

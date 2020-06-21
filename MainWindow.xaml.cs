@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using RegistroPrimerParcialAP1.UI.Registros;
 
 namespace RegistroPrimerParcialAP1
 {
@@ -23,6 +24,12 @@ namespace RegistroPrimerParcialAP1
         public MainWindow()
         {
             InitializeComponent();
+        }
+
+        private void RegistrarArticuloButton_Click(object sender, RoutedEventArgs e)
+        {
+            Window registro = new rArticulos();
+            registro.Show();
         }
     }
 }

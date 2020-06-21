@@ -12,5 +12,6 @@ namespace RegistroPrimerParcialAP1.BLL
             int.TryParse(valor, out retorno);
             return retorno;
         }
+
     }
 }

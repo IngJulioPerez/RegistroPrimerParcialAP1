@@ -17,7 +17,7 @@ namespace RegistroPrimerParcialAP1.Migrations
 
             modelBuilder.Entity("RegistroPrimerParcialAP1.Entidades.Articulos", b =>
                 {
-                    b.Property<int>("ProductoID")
+                    b.Property<int>("ArticuloId")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("INTEGER");
 
@@ -33,7 +33,7 @@ namespace RegistroPrimerParcialAP1.Migrations
                     b.Property<float>("ValorInventario")
                         .HasColumnType("REAL");
 
-                    b.HasKey("ProductoID");
+                    b.HasKey("ArticuloId");
 
                     b.ToTable("Articulos");
                 });
