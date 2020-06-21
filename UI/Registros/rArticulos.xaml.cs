@@ -90,20 +90,23 @@ namespace RegistroPrimerParcialAP1.UI.Registros
         }
 
         private void ValorInventarioTextBox_TextChanged(object sender, TextChangedEventArgs e)
-        {            
-            
-            ValorInventarioTextBox.Text = (Utilidades.ToInt(ExistenciaTextBox.Text)* Utilidades.ToInt(CostoTextBox.Text)).ToString(); 
- 
+        {
+            int existencia = Utilidades.ToInt(ExistenciaTextBox.Text);
+            double costo = Convert.ToDouble(CostoTextBox.Text);
+            string valorInventario = (existencia * costo).ToString();
+            ValorInventarioTextBox.Text = valorInventario;
+
+
         }
 
         private void ExistenciaTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            int existencia = int.Parse(ExistenciaTextBox.Text);
+            
         }
 
         private void CostoTextBox_TextChanged(object sender, TextChangedEventArgs e)
         {
-            double costo = Convert.ToDouble(CostoTextBox.Text);
+
         }
     }
 
